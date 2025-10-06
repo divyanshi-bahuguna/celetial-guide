@@ -1,0 +1,43 @@
+import { useState } from "react";
+import CalculatorTemplate from "../CalculatorTemplate.jsx";
+
+const fields = [
+  { name: "dob", label: "Date of Birth", placeholder: "Select your date of birth", type: "date" },
+];
+
+const LuckyColorCalculator = () => {
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState("");
+
+  const onSubmit = async ({ dob }) => {
+    setLoading(true);
+    setResult("");
+    try {
+      const res = await fetch("http://localhost:5000/api/lucky-color-calculator", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ dob }),
+      });
+      const data = await res.json();
+      setResult(data.result);
+    } catch (err) {
+      console.error(err);
+      setResult("Error calculating lucky color.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <CalculatorTemplate
+      title="Lucky Color Calculator"
+      description="Find your auspicious colors (AI-powered)."
+      fields={fields}
+      onSubmit={onSubmit}
+      loading={loading}
+      result={result}
+    />
+  );
+};
+
+export default LuckyColorCalculator;
