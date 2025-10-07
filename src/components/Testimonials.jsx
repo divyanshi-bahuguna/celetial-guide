@@ -33,7 +33,7 @@ const Testimonials = () => {
     <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-playfair font-bold    mb-4">
+          <h2 className="text-4xl font-playfair font-bold text-foreground mb-4">
             What Our Clients Say
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -50,11 +50,11 @@ const Testimonials = () => {
                     <Star key={i} className="h-5 w-5 fill-accent text-accent" />
                   ))}
                 </div>
-                <p className="   mb-4 italic">
+                <p className="text-foreground mb-4 italic">
                   "{testimonial.text}"
                 </p>
                 <div className="border-t pt-4">
-                  <p className="font-semibold   ">
+                  <p className="font-semibold text-foreground">
                     {testimonial.name}
                   </p>
                   <p className="text-sm text-muted-foreground">

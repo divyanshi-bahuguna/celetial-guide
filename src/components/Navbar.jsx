@@ -4,10 +4,10 @@ import { Globe } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
-  const [language, setLanguage] = useState("en"); // ✅ fixed (removed TS syntax)
+  const [language, setLanguage] = useState("en");
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "en" ? "hi" : "en"));
+    setLanguage(prev => prev === "en" ? "hi" : "en");
   };
 
   const content = {
@@ -21,9 +21,8 @@ const Navbar = () => {
       panchang: "Panchang",
       eclipse: "Eclipse",
       store: "Store",
-      nameCorrection: "Name Correction",
       about: "About",
-      contact: "Contact",
+      contact: "Contact"
     },
     hi: {
       home: "होम",
@@ -35,65 +34,40 @@ const Navbar = () => {
       panchang: "पंचांग",
       eclipse: "ग्रहण",
       store: "स्टोर",
-      nameCorrection: "नाम सुधार",
       about: "परिचय",
-      contact: "संपर्क",
-    },
+      contact: "संपर्क"
+    }
   };
 
   const t = content[language];
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-playfair font-bold text-primary">
+            <span className="text-2xl font-playfair font-bold text-yellow-500">
               Pandit Ashu Bahuguna
             </span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-4 text-sm">
-            <Link to="/" className="hover:text-primary transition-colors font-medium">
-              {t.home}
-            </Link>
-            <Link to="/horoscope" className="hover:text-primary transition-colors font-medium">
-              {t.horoscope}
-            </Link>
-            <Link to="/kundli-milan" className="hover:text-primary transition-colors font-medium">
-              {t.kundli}
-            </Link>
-            <Link to="/calculators" className="hover:text-primary transition-colors font-medium">
-              {t.calculators}
-            </Link>
-            <Link to="/festivals" className="hover:text-primary transition-colors font-medium">
-              {t.festivals}
-            </Link>
-            <Link to="/shubh-muhurat" className="hover:text-primary transition-colors font-medium">
-              {t.muhurat}
-            </Link>
-            <Link to="/panchang" className="hover:text-primary transition-colors font-medium">
-              {t.panchang}
-            </Link>
-            <Link to="/eclipse" className="hover:text-primary transition-colors font-medium">
-              {t.eclipse}
-            </Link>
-            <Link to="/store" className="hover:text-primary transition-colors font-medium">
-              {t.store}
-            </Link>
-            <Link to="/about" className="hover:text-primary transition-colors font-medium">
-              {t.about}
-            </Link>
-            <Link to="/contact" className="hover:text-primary transition-colors font-medium">
-              {t.contact}
-            </Link>
+            {Object.keys(t).map((key) => (
+              <Link
+                key={key}
+                to={`/${key === "home" ? "" : key.replace(/\s+/g, "-").toLowerCase()}`}
+                className="text-gray-800 hover:text-red-500 transition-colors font-medium"
+              >
+                {t[key]}
+              </Link>
+            ))}
           </div>
 
           <Button
             variant="outline"
             size="sm"
             onClick={toggleLanguage}
-            className="gap-2"
+            className="gap-2 border-gray-300 text-gray-800 hover:text-red-500"
           >
             <Globe className="h-4 w-4" />
             {language === "en" ? "EN" : "हिं"}

@@ -20,7 +20,7 @@ const Hero = () => {
             <span className="text-primary font-semibold text-lg">Expert Astrologer</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold    mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-foreground mb-6 leading-tight">
             Pandit Ashu Bahuguna
           </h1>
           
@@ -48,15 +48,15 @@ const Hero = () => {
           <div className="flex flex-wrap gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-              <span className="   font-medium">35+ Years Experience</span>
+              <span className="text-foreground font-medium">35+ Years Experience</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
-              <span className="   font-medium">50,000+ Happy Clients</span>
+              <span className="text-foreground font-medium">50,000+ Happy Clients</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              <span className="   font-medium">Authentic Vedic Guidance</span>
+              <span className="text-foreground font-medium">Authentic Vedic Guidance</span>
             </div>
           </div>
         </div>

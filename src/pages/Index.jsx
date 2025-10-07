@@ -1,16 +1,15 @@
-import React from "react";
-import Navbar from "../components/Navbar.jsx";
-import Hero from "../components/Hero.jsx";
-import ServicesGrid from "../components/ServicesGrid.jsx";
-import FestivalsSection from "../components/FestivalsSection.jsx";
-import Testimonials from "../components/Testimonials.jsx";
-import Footer from "../components/Footer.jsx";
-import FloatingButtons from "../components/FloatingButtons.jsx";
-import ConsultationPopup from "../components/ConsultationPopup.jsx";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import ServicesGrid from "@/components/ServicesGrid";
+import FestivalsSection from "@/components/FestivalsSection";
+import Testimonials from "@/components/Testimonials";
+import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
+import ConsultationPopup from "@/components/ConsultationPopup";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
       <Hero />
       <ServicesGrid />
@@ -24,4 +23,3 @@ const Index = () => {
 };
 
 export default Index;
-

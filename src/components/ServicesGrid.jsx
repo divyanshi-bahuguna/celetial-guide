@@ -73,7 +73,7 @@ const ServicesGrid = () => {
     <section className="py-16 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-playfair font-bold    mb-4">
+          <h2 className="text-4xl font-playfair font-bold text-foreground mb-4">
             Our Services
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -89,7 +89,7 @@ const ServicesGrid = () => {
                   <div className={`${service.color} mb-4`}>
                     <service.icon className="h-12 w-12" />
                   </div>
-                  <h3 className="text-xl font-playfair font-semibold    mb-2">
+                  <h3 className="text-xl font-playfair font-semibold text-foreground mb-2">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground">

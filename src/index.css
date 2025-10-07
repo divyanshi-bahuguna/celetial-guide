@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🎨 Design System Variables */
 @layer base {
   :root {
     --background: 40 40% 97%;
@@ -33,26 +34,19 @@
     --ring: 30 100% 60%;
 
     --radius: 0.75rem;
-
+    
     --gradient-sunrise: linear-gradient(135deg, hsl(30 100% 60%), hsl(0 80% 50%));
     --gradient-warm: linear-gradient(180deg, hsl(40 40% 97%), hsl(45 35% 94%));
     --shadow-warm: 0 10px 30px -10px hsl(30 100% 60% / 0.2);
     --shadow-glow: 0 0 40px hsl(45 95% 65% / 0.3);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -84,6 +78,7 @@
     --border: 25 20% 22%;
     --input: 25 20% 22%;
     --ring: 30 100% 60%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -93,11 +88,16 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  :root {
-  --background: 0 0% 100%;
-  --foreground: 0 0% 10%;
-  --card: 0 0% 100%;
-  --primary: 220 90% 50%;
-  --primary-foreground: 0 0% 100%;
 }
+
+/* ✅ Apply global styles */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
 }
